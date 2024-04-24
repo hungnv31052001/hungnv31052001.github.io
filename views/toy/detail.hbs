@@ -1,0 +1,14 @@
+<div class="row">
+   <div class="col-md-5 text-center">
+      <img src="{{ toy.illustration }}"
+      width="300" height="300">
+      <h3>{{ toy.name }}</h3>
+   </div>
+   <div class="col-md-7">
+      <ul>
+         <li>Year Of Manufacture: {{ toy.yearManufacture }}</li>
+         <li>Price: {{ toy.price }}</li>
+         <li>Type: {{ toy.type.name }}</li>
+      </ul>
+   </div>
+</div>
