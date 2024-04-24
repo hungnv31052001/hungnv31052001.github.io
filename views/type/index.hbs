@@ -1,9 +1,16 @@
+<center>
+   <a class="btn btn-primary" href="/type/add">Add new type</a>
+   <a class="btn btn-success" href="/type/deleteall"
+      onclick="return confirm('Are you sure to delete all types ?');">Delete all types</a>
+</center>
+<br>
+
 <div class="container col-md-6">
    <table class="table table-striped">
       <tr>
          <th>Type Name</th>
-         <th>Type Quantity</th>
-         <th>Menu</th>
+         <th>Quantity</th>
+         <th>Actions</th>
       </tr>
       {{#each typeList }}
       <tr>

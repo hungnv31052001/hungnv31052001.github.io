@@ -7,6 +7,22 @@ router.get('/', async (req, res) => {
    res.render('type/index', { typeList });
 })
 
+//step 1: render "Add toy" form for user to input data
+router.get('/add', async (req, res) => {
+   var types = await TypeModel.find({});
+   res.render('type/add', { types });
+})
+
+//step 2: get input data from form and add data to database
+router.post('/add', async (req, res) => {
+   //get input data from form
+   var type = req.body;
+   //add data to database
+   await TypeModel.create(type);
+   //redirect to toy homepage
+   res.redirect('/type');
+})
+
 router.get('/delete/:id', async (req, res) => {
    await TypeModel.findByIdAndDelete(req.params.id);
    res.redirect('/type');
