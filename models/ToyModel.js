@@ -3,7 +3,6 @@ var mongoose = require('mongoose');
 //declare schema (table design/structure)
 var ToySchema = mongoose.Schema(
    {
-      no: Number,
       name: String,
       type: String,   
       yearManufacture: Number,      //interger

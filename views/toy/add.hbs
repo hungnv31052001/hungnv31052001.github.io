@@ -1,10 +1,7 @@
 <div class="container text-center col-md-6">
   <form action="/toy/add" method="post">
     <h1 class="text text-primary text-uppercase">Add new toy</h1>
-    <div>
-      <label for="">No</label><br>
-      <input class="form-control" type="text" name="no"><br><br>
-    </div>
+
     <label for="">Name</label><br>
     <input class="form-control"type="text" name="name"><br><br>
     <label for="">Year Of Manufacture</label><br>
@@ -13,7 +10,7 @@
     <input class="form-control" type="number" name="price"><br><br>
     <label for="">Illustration</label><br>
     <input class="form-control" type="url" name="illustration"><br><br>
-    <label for="">Type Name</label><br>
+    <label for="">Type</label><br>
     <select name="type" id="">
       {{#each types }}
       <option value="{{ _id }}">{{ name }}</option>
