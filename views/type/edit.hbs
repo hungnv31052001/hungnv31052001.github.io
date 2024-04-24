@@ -1,0 +1,11 @@
+<form action="/type/edit/{{type._id}}" method="post">
+   <h1>Edit type</h1>
+   <label for="">Name</label><br>
+   <input type="text" name="name" 
+   value="{{ type.name }}"><br><br>
+   <label for="">Quantity</label><br>
+   <input type="number" name="quantity"
+   value="{{ type.quantity }}"
+   ><br><br>
+   <input type="submit" value="Edit">
+</form>
