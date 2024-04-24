@@ -1,5 +1,6 @@
-<form action="/toy/edit/{{toy._id}}" method="post">
-   <h1>Edit toy</h1>
+<center>
+   <form action="/toy/edit/{{toy._id}}" method="post">
+   <h1>Edit Toy</h1>
    <label for="">Year Of Manufacture</label><br>
    <input type="number" name="yearManufacture" min="2000" max="2024"
    value="{{ toy.yearManufacture }}"><br><br>
@@ -13,3 +14,4 @@
    ><br><br>
    <input type="submit" value="Edit">
 </form>
+</center>
