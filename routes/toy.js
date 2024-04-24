@@ -84,7 +84,7 @@ router.post('/search', async (req, res) => {
 
 //sort by toy's price ascending
 router.get('/sortprice/asc', async (req, res) => {
-   let toyList = await ToyModel.find().sort({ price: 1 });
+   let toyList = await ToyModel.find().sort({ price: 1 }).populate('type');
    res.render('toy/index', { toyList });
 })
 
