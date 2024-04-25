@@ -50,8 +50,9 @@ router.post('/add', async (req, res) => {
 
 router.get('/edit/:id', async (req, res) => {
    var id = req.params.id;
+   var types = await TypeModel.find({});
    var toy = await ToyModel.findById(id);
-   res.render('toy/edit', { toy });
+   res.render('toy/edit', { toy, types });
 })
 
 router.post('/edit/:id', async (req, res) => {
