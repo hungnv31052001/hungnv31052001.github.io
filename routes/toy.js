@@ -1,6 +1,7 @@
 var express = require('express');
 const ToyModel = require('../models/ToyModel');
 const TypeModel = require('../models/TypeModel');
+const BrandModel = require('../models/BrandModel');
 var router = express.Router();
 
 //READ feature
@@ -8,9 +9,10 @@ var router = express.Router();
 router.get('/', async (req, res) => {
    //SQL: SELECT * FROM toys
    var type = await TypeModel.find({});
-   var toyList = await ToyModel.find({}).populate('type');
+   var brand = await BrandModel.find({});
+   var toyList = await ToyModel.find({}).populate('type').populate('brand');
    //console.log(toyList);
-   res.render('toy/index', { toyList, type });
+   res.render('toy/index', { toyList, type, brand });
 })
 
 //DELETE feature
@@ -35,7 +37,8 @@ router.get('/deleteall', async (req, res) => {
 //step 1: render "Add toy" form for user to input data
 router.get('/add', async (req, res) => {
    var types = await TypeModel.find({});
-   res.render('toy/add', { types });
+   var brands = await BrandModel.find({});
+   res.render('toy/add', { types, brands });
 })
 
 //step 2: get input data from form and add data to database

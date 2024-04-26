@@ -10,7 +10,7 @@ var usersRouter = require('./routes/users');
 //step 1: declare router for "toy"
 var toyRouter = require('./routes/toy');
 var typeRouter = require('./routes/type');
-
+var brandRouter = require('./routes/brand');
 var app = express();
 //import body-parser library (to get input from client)
 var bodyParser = require('body-parser');
@@ -45,7 +45,7 @@ app.use('/users', usersRouter);
 //step 2: declare router for "toy" 
 app.use('/toy', toyRouter);
 app.use('/type', typeRouter);
-
+app.use('/brand', brandRouter);
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));
