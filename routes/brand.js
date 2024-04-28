@@ -28,6 +28,12 @@ router.get('/delete/:id', async (req, res) => {
    res.redirect('/brand');
 })
 
+router.get('/deleteall', async (req, res) => {
+   //SQL: DELETE FROM brands
+   await BrandModel.deleteMany();
+   res.redirect('/brand');
+})
+
 router.get('/edit/:id', async (req, res) => {
    var id = req.params.id;
    var brand = await BrandModel.findById(id);

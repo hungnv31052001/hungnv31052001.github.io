@@ -28,6 +28,12 @@ router.get('/delete/:id', async (req, res) => {
    res.redirect('/type');
 })
 
+router.get('/deleteall', async (req, res) => {
+   //SQL: DELETE FROM types
+   await TypeModel.deleteMany();
+   res.redirect('/type');
+})
+
 router.get('/edit/:id', async (req, res) => {
    var id = req.params.id;
    var type = await TypeModel.findById(id);
