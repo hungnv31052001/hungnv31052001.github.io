@@ -7,7 +7,7 @@ router.get('/', async (req, res) => {
    res.render('type/index', { typeList });
 })
 
-//step 1: render "Add toy" form for user to input data
+//step 1: render "Add type" form for user to input data
 router.get('/add', async (req, res) => {
    var types = await TypeModel.find({});
    res.render('type/add', { types });

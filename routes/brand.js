@@ -7,7 +7,7 @@ router.get('/', async (req, res) => {
    res.render('brand/index', { brandList });
 })
 
-//step 1: render "Add toy" form for user to input data
+//step 1: render "Add brand" form for user to input data
 router.get('/add', async (req, res) => {
    var brands = await BrandModel.find({});
    res.render('brand/add', { brands });
